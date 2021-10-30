@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      #cnv {
+       display: inline-block !important;
+       border: 1px solid #000;
+       background-color: #fff;
+       margin: .5em;
+       vertical-align: top !important;
+      }
+
+      #ctrls {
+       display: inline-block !important;
+       width: 50%;
+       vertical-align: top !important;
+       border: 1px solid #000;
+       margin: .5em;
+       background-color: #fff;
+      }
+
+      form fieldset {
+       border: 0;
+       color: black;
+      }
+
+      form fieldset input {
+       width: 40%;
+      }
+
+      .option {
+       width: 25%;
+      }
+    </style>
+
+    <script src="index.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div>
+      Y = -½gt<sup>2</sup> + V<sub>0Y</sub>t + Y<sub>0</sub><br />
+      V<sub>Y</sub> = -gt + V<sub>0Y</sub><br />
+    </div>
+
+    <canvas height="410" id="cnv" width="100"></canvas>
+
+    <form id="ctrls">
+      <fieldset>
+        <input id="start" type="button" value="Iniciar" />
+        <input id="stop" type="button" value="Parar" />
+      </fieldset>
+
+      <fieldset>
+        <input class="option" id="venus" type="button" value="Venus" /><br />
+        <input class="option" id="earth" type="button" value="Tierra" />     <br />
+        <input class="option" id="moon" type="button" value="Luna" /><br />
+        <input class="option" id="mars" type="button" value="Marte" /><br />
+        <input class="option" id="jupiter" type="button" value="Jupiter" /><br />
+        <input class="option" id="neptune" type="button" value="Neptuno" /><br />
+      </fieldset>
+
+      <fieldset>
+        <label>Velocidad final(m/s): </label>
+        <input disabled="disabled" id="final-velocity" type="text" value="0" />
+      </fieldset>
+
+      <fieldset>
+        <label>Posición inicial(Metros): </label>
+        <input id="initial-position" type="text" value="40" />
+      </fieldset>
+
+      <fieldset>
+        <label>Gravedad (g: m/s<sup>2</sup>): </label>
+        <input disabled="disabled" id="gravity" type="text" value="9.8" />
+      </fieldset>
+    </form>
+
+    <div>
+      Demo de rebote sin fuerza de fricción
+
+      <ol>
+        <li>
+          Esta nueva simulación usa los cálculos mejorados de la anterior
+        </li>
+
+        <li>
+          Los controles son más simples, pero dan una idea de lo que se puede hacer
+        </li>
+
+        <li>
+          Todavía sigue el problema de no poder controlar con exactitud el tiempo de la animación,
+          lo que a veces se nota por que los cálculos generan datos "extra", cómo si la pelota
+          pudiera atravesar un poco el suelo
+        </li>
+
+        <li>
+          Es un sistema ideal sin fuerzas adicionales aparte de la "fuerza de gravedad" (Normal,
+          fricción con aire, empuje o de otros objetos)
+        </li>
+
+        <li>
+          Lo que dice gravedad no es cómo tal la fuerza si no la aceleración que esta genera (se
+          puede escoger de 6 diferentes aceleraciones). Cómo dije en el anterior demo: las masas
+          son despreciables
+        </li>
+
+        <li>
+          Se hizo más pequeño y se puede cambiar la altura de la que cae la pelota.
+          Valor máximo: 40 mts. Valor mínimo: 1 mt
+        </li>
+
+        <li>
+          La escala es de 1:10 es decir 1 metro está representado en 10 pixeles
+        </li>
+
+        <li>
+          Aunque se muestran cálculos con decimales (4 en el caso de la velocidad), en el momento
+          de graficar es mejor redondear al entero más cercano.
+        </li>
+
+        <li>
+          La velocidad sólo se actualiza cuándo la pelota toca el suelo
+        </li>
+
+        <li>
+          Lo siguiente es hacer la simulación con fuerzas, dándoles valores reales a las masas y
+          usando los sistemas para calcular dichas fuerzas: Rozamiento, normal, gravedad, etc.
+          Lo cuál haría detener la pelota.
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
