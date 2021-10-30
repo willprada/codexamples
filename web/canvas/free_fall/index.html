@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es" dir=>
+  <head>
+    <meta charset="utf-8">
+    <title>Demo caída libre</title>
+    <style type="text/css">
+      #cnv {
+       display: inline-block !important;
+       border: 1px solid #000;
+       background-color: #fff;
+       margin: .5em;
+       vertical-align: top !important;
+      }
+
+      #ctrls {
+       display: inline-block !important;
+       width: 50%;
+       vertical-align: top !important;
+       border: 1px solid #000;
+       margin: .5em;
+       background-color: #fff;
+      }
+
+      form fieldset {
+       border: 0;
+       color: #000 !important;
+      }
+
+      form fieldset input {
+       width: 40%;
+      }
+    </style>
+    <script src="index.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div>
+      Y = -½gt<sup>2</sup> + V<sub>0Y</sub> + Y<sub>0</sub>
+      <br />
+      V<sub>Y</sub> = -gt + V<sub>0Y</sub>
+    </div>
+
+    <canvas height="600" id="cnv" width="100">   </canvas>
+
+
+    <form id="ctrls">
+      <fieldset>
+        <input id="start" type="button" value="Iniciar" /><br />
+      </fieldset>
+
+      <fieldset>
+        <label>Gravedad (g): </label><input disabled="disabled" id="gravity" type="text" value="9.8" />
+      </fieldset>
+
+      <fieldset>
+        <label>Tiempo (t): </label><input disabled="disabled" id="time" type="text" value="0" />
+      </fieldset>
+
+      <fieldset>
+        <label>Velocidad inicial(V<sub>0</sub>): </label><input id="initial-velocity" type="text" value="0" />
+      </fieldset>
+
+      <fieldset>
+        <label>Posición inicial(Y<sub>0</sub>): </label><input id="initial-position" type="text" value="59" />
+      </fieldset>
+
+      <fieldset>
+        <label>Velocidad actual(V): </label><input disabled="disabled" id="current-velocity" type="text" value="0" />
+      </fieldset>
+
+      <fieldset>
+        <label>Posición actual(Y): </label><input disabled="disabled" id="current-position" type="text" value="0" />
+      </fieldset>
+    </form>
+
+    <div>
+      Demo básico probando ecuaciones de cinemática:
+      <ol>
+        <li>Todavía falta afinar las "colisiones" de un modo menos rústico</li>
+        <li>Se pueden usar las ecuaciones para calcular posición y velocidad</li>
+        <li>La masa de la pelota es despreciable</li>
+        <li>
+          La ecuación se programa al revés por que a diferencia del cuadrante I del plano cartesiano,
+          el computador grafica con el punto (0,0) en la esquina superior izquierda, aumentando
+          normalmente en X de izquierda a derecha, pero las posiciones en Y, aumentan de arriba
+          hacia abajo. Casí cómo si fuera el cuarto cuadrante del plano cartesiano
+        </li>
+        <li>
+          Se pueden usar funciones para convertir la pantalla en un plano cartesiano estandar,
+          pero dependiendo del modo en que se programe, tocaría considerar el costo de los cálculos
+          en el rendimiento.<br />
+        </li>
+        <li>Al usar requestAnimationFrame, no se puede controlar bien el tiempo exacto de dibujo,
+          por lo tanto, al hacer simulaciones con aceleración, parece que la pelota se clavara en
+          el piso o paredes.  Esto debe poderse calibrar de algún modo que no consuma tantos
+          recursos, pero eso lo dejaré para luego
+        </li>
+      </ol>
+    </div>
+  </body>
+</html>
