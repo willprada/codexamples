@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Movimiento circular: Proyección</title>
+    <style media="screen">
+      #cnv {
+       display: inline-block !important;
+       border: 1px solid #000;
+       background-color: #fff;
+       margin: .5em;
+       vertical-align: top !important;
+      }
+
+      #ctrls {
+       display: inline-block !important;
+       width: 50%;
+       vertical-align: top !important;
+       border: 1px solid #000;
+       margin: .5em;
+       background-color: #fff;
+      }
+
+      form fieldset {
+       border: 0;
+       color: black;
+      }
+
+      form fieldset input {
+       width: 40%;
+      }
+    </style>
+    <script src="index.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div>
+      <canvas height="300" id="cnv" width="300"></canvas>
+      <p>
+        Al proyectarse el movimiento circular de una partícula en las componentes cartesianas, se observa una oscilación.
+      </p>
+    </div>
+    <div>
+      <p>
+        Ángulo: θ (Theta)<br />
+        Velocidad angular: ω (Omega)<br />
+        Tiempo: t
+      </p>
+
+      <p>
+        El ángulo (θ) debe convertirse a radianes, ya que es el sistema utilizado tanto
+        en las fórmulas cómo por la mayoría de lenguajes de programación.
+      </p>
+
+      <p>
+        La velocidad angular (ω) es en radianes sobre tiempo.
+      </p>
+
+
+      <p>
+        El tiempo (t) en segundos, preferiblemente.
+      </p>
+
+      <p>
+        Para poder encontrar el vector posición (<b>r</b>) de la partícula en función del tiempo, se utiliza la siguiente ecuación:<br />
+        <b>r</b> = <i>r cos(ωt)</i><b>i</b> + <i>r sen(ωt)</i><b>j</b>
+      </p>
+    </div>
+  </body>
+</html>
